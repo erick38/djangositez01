@@ -1,0 +1,17 @@
+
+{% load static %}
+<h1>homepage</h1>
+    {% if user.is_authenticated %}
+<p>Hello, {{user.username}}
+<form method="POST" action="/logout/">
+    {% csrf_token %}
+    <input type='submit' value='logout'/>
+</form>
+{% else %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+<form method="POST" action="/login/">
+    {% csrf_token %}
+    <input type='submit' value='login'/>
+</form>
+      <h1 class="test">logo and jkdlgnrteijfsklgnv rtejikfsmg ...</h1>  
+{% endif %}
